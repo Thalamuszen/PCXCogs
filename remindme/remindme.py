@@ -376,7 +376,7 @@ class RemindMe(commands.Cog):
         async with self.config.reminders() as current_reminders:
             current_reminders.append(reminder)
         await self.send_message(
-            ctx, "I will remind you in {}.".format(future_text)
+            ctx, ":white_check_mark: I will remind you in {}.".format(future_text)
         )
 
         if (
