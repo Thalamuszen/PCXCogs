@@ -362,7 +362,7 @@ class RemindMe(commands.Cog):
             return
 
         seconds = time_delta.total_seconds()
-        future_date = datetime.date.today()
+        future_date = datetime.datetime.now()
         future = int(current_time.time() + seconds)
         future_text = humanize_timedelta(timedelta=time_delta)
         next_reminder_id = self.get_next_user_reminder_id(users_reminders)
