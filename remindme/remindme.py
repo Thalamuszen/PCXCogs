@@ -228,7 +228,7 @@ class RemindMe(commands.Cog):
         Examples:
         - [p]reminder create 2min Do that thing soon in 2 minutes
         - [p]remindme create 3h40m Do that thing later in 3 hours and 40 minutes
-        - [p]reminder create 3 days Have sushi with Ryan and Heather
+        - [p]reminder create 3 days Have sushi with the lolis
         """
         await self.create_reminder(ctx, time, text=text)
 
