@@ -365,6 +365,7 @@ class RemindMe(commands.Cog):
         seconds = time_delta.total_seconds()
         future = int(current_time.time() + seconds)
         future_date_and_time = datetime.fromtimestamp(future)
+        date_text = future_date_and_time.strftime("%d/%md/%Y, %H:%M:%S")
         future_text = humanize_timedelta(timedelta=time_delta)
         next_reminder_id = self.get_next_user_reminder_id(users_reminders)
 
@@ -379,7 +380,7 @@ class RemindMe(commands.Cog):
         async with self.config.reminders() as current_reminders:
             current_reminders.append(reminder)
         await self.send_message(
-            ctx, "I will remind you in {}. {}.".format(future_text, future_date_and_time)
+            ctx, "I will remind you in {}. {}.".format(future_text, date_text)
         )
 
         if (
