@@ -520,7 +520,7 @@ class RemindMe(commands.Cog):
         if ctx.message.guild is not None:
             if message[:2].lower() != "i " and message[:2].lower() != "i'":
                 message = message[0].lower() + message[1:]
-            message = ctx.message.author.mention + ", " + message
+            message = ctx.message.author.name + ", " + message
 
         await ctx.send(message)
 
