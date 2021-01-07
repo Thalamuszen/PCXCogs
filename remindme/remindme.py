@@ -380,7 +380,7 @@ class RemindMe(commands.Cog):
         async with self.config.reminders() as current_reminders:
             current_reminders.append(reminder)
         await self.send_message(
-            ctx, "I will remind you in {}. ({})".format(future_text, date_text)
+            ctx, "I will remind you in **{}** to **{}**.\n ({})".format(future_text, text, date_text)
         )
 
         if (
